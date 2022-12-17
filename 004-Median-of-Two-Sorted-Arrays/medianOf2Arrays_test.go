@@ -10,7 +10,7 @@ type TestCase struct {
 	result float64
 }
 
-func Test_median(t *testing.T) {
+func TestFindMedianSortedArrays(t *testing.T) {
 	ans := []TestCase{
 		{
 			[]int{1, 3},
@@ -22,9 +22,19 @@ func Test_median(t *testing.T) {
 			[]int{4, 3},
 			2.5,
 		},
+		{
+			[]int{1, 3},
+			[]int{2},
+			2,
+		},
+		{
+			[]int{1, 2},
+			[]int{3, 4},
+			2.5,
+		},
 	}
 	for _, val := range ans {
-		med := median(val.arr1, val.arr2)
+		med := findMedianSortedArrays(val.arr1, val.arr2)
 		if val.result != med {
 			t.Errorf("Expected %v , Got %v", val.result, med)
 		}
