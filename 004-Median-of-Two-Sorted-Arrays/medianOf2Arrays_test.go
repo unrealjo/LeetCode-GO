@@ -12,26 +12,10 @@ type TestCase struct {
 
 func TestFindMedianSortedArrays(t *testing.T) {
 	ans := []TestCase{
-		{
-			[]int{1, 3},
-			[]int{2},
-			2.00,
-		},
-		{
-			[]int{1, 2},
-			[]int{4, 3},
-			2.5,
-		},
-		{
-			[]int{1, 3},
-			[]int{2},
-			2,
-		},
-		{
-			[]int{1, 2},
-			[]int{3, 4},
-			2.5,
-		},
+		{[]int{1, 3}, []int{2}, 2.00},
+		{[]int{1, 2}, []int{4, 3}, 2.5},
+		{[]int{1, 3}, []int{2}, 2},
+		{[]int{1, 2}, []int{3, 4}, 2.5},
 	}
 	for _, val := range ans {
 		med := findMedianSortedArrays(val.arr1, val.arr2)
