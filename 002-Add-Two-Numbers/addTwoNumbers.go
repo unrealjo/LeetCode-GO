@@ -18,8 +18,10 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 			sum += l2.Val
 			l2 = l2.Next
 		}
+		// Applying sum mod 10 to get the first digit of sum only
 		cur.Next = &ListNode{Val: sum % 10}
 		cur = cur.Next
+		// In order to eliminate the first digit
 		sum = sum / 10
 	}
 

@@ -5,6 +5,7 @@ import (
 )
 
 func lengthOfLongestSubstring(s string) int {
+	// Todo : Optimization of the algorithm
 	max, strLen := 0, 0
 	str, char := "", ""
 	l := len([]rune(s))
