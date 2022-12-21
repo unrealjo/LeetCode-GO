@@ -1,28 +1,18 @@
 package LongestSubstring
 
-import (
-	"strings"
-)
-
 func lengthOfLongestSubstring(s string) int {
-	// Todo : Optimization of the algorithm
-	max, strLen := 0, 0
-	str, char := "", ""
-	l := len([]rune(s))
-	for i := 0; i < l; i++ {
-		str = string(s[i])
-		for _, c := range s[i:] {
-			char = string(c)
-			if !strings.Contains(str, char) {
-				str += char
-			} else {
-				str = char
-			}
-			strLen = len([]rune(str))
-			if strLen > max {
-				max = strLen
-			}
+	charList := map[rune]int{}
+	left := 0
+	max := 0
+	for right, v := range s {
+		n, ok := charList[v]
+		if ok && n > left {
+			left = n
 		}
+		if max < right-left+1 {
+			max = right - left + 1
+		}
+		charList[v] = right + 1
 	}
 	return max
 }
