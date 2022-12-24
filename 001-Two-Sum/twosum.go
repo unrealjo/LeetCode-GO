@@ -5,13 +5,13 @@ package twosum
 return indices of the two numbers such that they add up to `target.
 */
 func twoSum(nums []int, target int) []int {
-	var c int
+	var sum int
 	dics := make(map[int]int)
 	for i, v := range nums {
-		c = target - v
-		_, ok := dics[c]
+		sum = target - v
+		_, ok := dics[sum]
 		if ok {
-			return []int{dics[c], i}
+			return []int{dics[sum], i}
 		}
 		dics[v] = i
 	}
