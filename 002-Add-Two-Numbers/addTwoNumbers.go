@@ -7,7 +7,7 @@ type ListNode struct {
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	result := &ListNode{}
-	cur := result
+	current := result
 	sum := 0
 	for l1 != nil || l2 != nil || sum != 0 {
 		if l1 != nil {
@@ -19,8 +19,8 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 			l2 = l2.Next
 		}
 		// Applying sum mod 10 to get the first digit of sum only
-		cur.Next = &ListNode{Val: sum % 10}
-		cur = cur.Next
+		current.Next = &ListNode{Val: sum % 10}
+		current = current.Next
 		// In order to eliminate the first digit
 		sum = sum / 10
 	}
