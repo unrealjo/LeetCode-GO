@@ -9,14 +9,14 @@ func myAtoi(s string) int {
 	sign := 1
 	sum := 0
 	plusFound := false
-	intParsed := 0
+	NumIntParsed := 0
 	for _, v := range s {
 		if s == "" {
 			return 0
 		}
 		//-------------- Parsing int -------------------
 		if v >= '0' && v <= '9' {
-			intParsed++
+			NumIntParsed++
 			n, err := strconv.ParseInt(string(v), 10, 32)
 			if err == nil {
 				sum = sum*10 + int(n)
@@ -30,7 +30,7 @@ func myAtoi(s string) int {
 				}
 			}
 			// check if at last one int is parsed
-		} else if sum >= 0 && intParsed > 0 {
+		} else if sum >= 0 && NumIntParsed > 0 {
 			return sign * sum
 		} else {
 			//-------------- checking for edge case ---------------
