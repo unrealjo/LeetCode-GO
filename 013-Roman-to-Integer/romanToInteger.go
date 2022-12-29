@@ -6,12 +6,12 @@ func romanToInt(s string) int {
 		'V': 5, 'L': 50, 'D': 500,
 	}
 	sum := 0
-	lenght := len(s)
+	length := len(s)
 	var right byte
 	var current byte
-	for i := 0; i < lenght; i++ {
+	for i := 0; i < length; i++ {
 		current = s[i]
-		if i+1 < lenght {
+		if i+1 < length {
 			right = s[i+1]
 		}
 		if R[right] > R[current] {
