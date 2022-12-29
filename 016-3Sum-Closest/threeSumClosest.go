@@ -6,14 +6,14 @@ import (
 )
 
 func threeSumClosest(nums []int, target int) int {
-	Lenght := len(nums)
+	Length := len(nums)
 	// Sort given array of numbers
 	sort.Ints(nums)
 	var left, right, sum, diff, result int
 	min := math.MaxInt
-	for i := 0; i < Lenght-2; i++ {
+	for i := 0; i < Length-2; i++ {
 		left = i + 1
-		right = Lenght - 1
+		right = Length - 1
 		for left < right {
 			sum = nums[left] + nums[right] + nums[i]
 			// Calculate the distance between the target and sum
